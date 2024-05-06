@@ -1,0 +1,19 @@
+<div>
+    <h3>Мои заказы</h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <td>Номер заказа</td>
+            <td>Адрес доставки</td>
+            <td>Цена заказа</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="order in myOrders">
+            <td>{{order.id}}</td>
+            <td>{{order.address}}</td>
+            <td>{{order.totalPrice}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

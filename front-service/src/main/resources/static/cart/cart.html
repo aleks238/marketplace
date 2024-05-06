@@ -1,0 +1,45 @@
+<div>
+    <h3>Корзина</h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <td>Название товара</td>
+            <td>Количество</td>
+            <td>Цена</td>
+            <td></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in cart.items">
+            <td>{{item.productTitle}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.pricePerProduct + ' руб. ' + ' x ' + item.quantity + ' шт. ' + ' = ' + item.price}}</td> <!-- т.е. 100 р. x 4 шт. = 400 -->
+            <td>
+                <button type="button"  class="btn btn-success" ng-click="removeItemFromCart(item.productId)">Удалить</button>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Итого</td>
+            <td>{{cart.totalPrice + ' руб.'}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <p>
+        <button class="btn btn-secondary" ng-click="clearCart()">Очистить корзину</button>
+    </p>
+
+    <div>
+        <p></p>
+        <h3>Детали заказа</h3>
+        <form novalidate ng-submit="createOrder()">
+            <input class="form-control" type="text" placeholder="Адрес доставки" ng-model="orderDetails.address">
+            <p></p>
+            <input class="form-control" type="text" placeholder="Телефон" ng-model="orderDetails.phone">
+            <p></p>
+            <button type="submit" class="btn btn-primary">Оформить заказ</button>
+         </form>
+     </div>
+     <p></p>
+
+</div>

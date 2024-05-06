@@ -1,0 +1,12 @@
+server:
+  port: 8166
+  servlet:
+    context-path: /web-market-cart
+utils:
+  cart:
+    prefix: WEB_MARKET_APP
+integrations:
+  core-service:
+    url: http://localhost:5555/core
+
+
